@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Scorer : MonoBehaviour
 {
-    int score = 0;
+    int score = 10;
     private void OnCollisionEnter(Collision other)
     {
-            score += 1;
+        if(other.gameObject.tag != "Hit")
+        {
+            score --;
             Debug.Log(score);
+        }
     }
 }
